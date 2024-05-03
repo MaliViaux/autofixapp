@@ -1,25 +1,23 @@
-import axios from "axios";
+import httpClient from "../http-common";
 
-const VOUCHERS_API_URL = "http://localhost:80/api/v1/voucher";
-
-function create(voucher){
-    return axios.post(VOUCHERS_API_URL, voucher)
+const getAll = () => {
+    return httpClient.get('/api/v1/voucher/');
 }
 
-function getAll(){
-    return axios.get(VOUCHERS_API_URL)
+const create = data => {
+    return httpClient.post("/api/v1/voucher/", data);
 }
 
-function get(id){
-    return axios.get(`${VOUCHERS_API_URL}/${id}`)
+const get = id => {
+    return httpClient.get(`/api/v1/voucher/${id}`);
 }
 
-function update(voucher){
-    return axios.put(VOUCHERS_API_URL, voucher)
+const update = data => {
+    return httpClient.put('/api/v1/voucher/', data);
 }
 
-function remove(id){
-    return axios.delete(`${VOUCHERS_API_URL}/${id}`)
+const remove = id => {
+    return httpClient.delete(`/api/v1/voucher/${id}`);
 }
 
 export default { getAll, create, get, update, remove };

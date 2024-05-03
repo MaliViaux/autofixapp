@@ -1,41 +1,39 @@
-import axios from "axios";
+import httpClient from "../http-common";
 
-const RECORD_API_URL = "http://localhost:80/api/v1/record";
-
-function create(record){
-    return axios.post(RECORD_API_URL, record)
+const getAll = () => {
+    return httpClient.get('/api/v1/record/');
 }
 
-function getAll(){
-    return axios.get(RECORD_API_URL)
+const create = data => {
+    return httpClient.post("/api/v1/record/", data);
 }
 
-function get(id){
-    return axios.get(`${RECORD_API_URL}/${id}`)
+const get = id => {
+    return httpClient.get(`/api/v1/record/${id}`);
 }
 
-function update(record){
-    return axios.put(RECORD_API_URL, record)
+const update = data => {
+    return httpClient.put('/api/v1/record/', data);
 }
 
-function finalize(id){
-    return axios.put(`${RECORD_API_URL}/${id}/finalize`)
+const finalize = id => {
+    return httpClient.put(`/api/v1/record/${id}/finalize`);
 }
 
-function pickup(id){
-    return axios.put(`${RECORD_API_URL}/${id}/pickup`)
+const pickup = id => {
+    return httpClient.put(`/api/v1/record/${id}/pickup`);
 }
 
-function applyVoucher(id){
-    return axios.put(`${RECORD_API_URL}/${id}/applyVoucher`)
+const applyVoucher = id => {
+    return httpClient.put(`/api/v1/record/${id}/applyVoucher`);
 }
 
-function removeVoucher(id){
-    return axios.put(`${RECORD_API_URL}/${id}/removeVoucher`)
+const removeVoucher = id => {
+    return httpClient.put(`/api/v1/record/${id}/removeVoucher`);
 }
 
-function remove(id){
-    return axios.delete(`${RECORD_API_URL}/${id}`)
+const remove = id => {
+    return httpClient.delete(`/api/v1/record/${id}`);
 }
 
-export default { getAll, create, get, update, finalize, pickup, remove, applyVoucher, removeVoucher  };
+export default { getAll, create, get, update, finalize, pickup, remove, applyVoucher, removeVoucher };

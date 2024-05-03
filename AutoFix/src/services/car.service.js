@@ -1,25 +1,23 @@
-import axios from "axios";
+import httpClient from "../http-common";
 
-const CAR_API_URL = "http://localhost:80/api/v1/car";
-
-function create(car){
-    return axios.post(CAR_API_URL, car)
+const getAll = () => {
+    return httpClient.get('/api/v1/car/');
 }
 
-function getAll(){
-    return axios.get(CAR_API_URL)
+const create = data => {
+    return httpClient.post("/api/v1/car/", data);
 }
 
-function get(id){
-    return axios.get(`${CAR_API_URL}/${id}`)
+const get = id => {
+    return httpClient.get(`/api/v1/car/${id}`);
 }
 
-function update(car){
-    return axios.put(CAR_API_URL, car)
+const update = data => {
+    return httpClient.put('/api/v1/car/', data);
 }
 
-function remove(id){
-    return axios.delete(`${CAR_API_URL}/${id}`)
+const remove = id => {
+    return httpClient.delete(`/api/v1/car/${id}`);
 }
 
 export default { getAll, create, get, update, remove };

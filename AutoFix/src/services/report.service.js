@@ -1,13 +1,11 @@
-import axios from "axios";
+import httpClient from "../http-common";
 
-const REPORT_API_URL = "http://localhost:80/api/v1/report";
-
-function getAverageRepairTimes(){
-    return axios.get(`${REPORT_API_URL}/averageRepairTime`)
+const getAverageRepairTimes = () => {
+    return httpClient.get(`/api/v1/report/averageRepairTime`);
 }
 
-function getRepairTypeStatistics(reportNumber){
-    return axios.get(`${REPORT_API_URL}/stats/${reportNumber}`)
+const getRepairTypeStatistics = reportNumber => {
+    return httpClient.get(`/api/v1/report/stats/${reportNumber}`);
 }
 
 export default { getAverageRepairTimes, getRepairTypeStatistics };
