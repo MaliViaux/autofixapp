@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.proyectoTingeso.services.RepairRecordServiceTest
+-------------------------------------------------------------------------------
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.16 s -- in com.example.proyectoTingeso.services.RepairRecordServiceTest

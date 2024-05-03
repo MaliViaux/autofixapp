@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.proyectoTingeso.controllers.VoucherControllerTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.799 s -- in com.example.proyectoTingeso.controllers.VoucherControllerTest
